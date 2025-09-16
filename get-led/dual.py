@@ -24,7 +24,6 @@ sleep_time = 0.2
 
 while True:
     if GPIO.input(up) and GPIO.input(down):
-        num = 255
         for led in leds:
             GPIO.output(led, 1 )
 

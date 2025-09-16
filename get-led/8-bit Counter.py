@@ -26,8 +26,6 @@ while True:
     if GPIO.input(up):
         if num == 255:
             num = 0
-            for led in leds:
-                GPIO.output(led, 0 )
         num = num+1
         print (num, dec2bin(num))
         #print (len(dec2bin(num)))
@@ -39,8 +37,6 @@ while True:
     if GPIO.input(down):
         if num == 0:
             num = 1
-            for led in leds:
-                GPIO.output(led, 0 )
         num = num-1
         print (num, dec2bin(num))
         #print (len(dec2bin(num)))
