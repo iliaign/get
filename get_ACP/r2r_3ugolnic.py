@@ -3,8 +3,8 @@ import time
 import r2r_dac as r2r
 
 amplitude = 3
-sig_freq = 20
-sampl_freq = 500
+sig_freq =1000
+sampl_freq = 450
 
 
 try:

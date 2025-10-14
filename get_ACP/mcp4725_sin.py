@@ -1,6 +1,6 @@
+import mcp4725_driver as mylp
 import signal_generation as sig
-import time 
-import r2r_dac as r2r
+import time
 
 amplitude = 3
 sig_freq = 20
@@ -8,7 +8,7 @@ sampl_freq = 500
 
 
 try:
-    dc = r2r.R2R_DAC([16,20,21,25,26,17,27,22], 3.2, True)
+    dc = mylp.MCP4725(amplitude)
 
     while True:
         try:

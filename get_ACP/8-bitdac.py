@@ -18,7 +18,7 @@ def voltage_to_number(voltage):
 
 def dec2bin(value):
     return [int(element) for element in bin(value)[2:].zfill(8)]
-
+2
 
 def number_to_dac(number):
     bits = dec2bin(number)
