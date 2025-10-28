@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 
+filename  = 'data_pp.txt'
 # Чтение данных из файла
 data = []
-with open('data.txt', 'r') as file:
+with open(filename, 'r') as file:
     for line in file:
         parts = line.strip().split(',')
         time = float(parts[0])

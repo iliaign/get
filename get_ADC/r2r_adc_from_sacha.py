@@ -36,8 +36,6 @@ class R2R_ADC:
         for i, pin in enumerate(self.bits_gpio):
             IO.output(pin, v_ar[i])
         
-        if self.verbose:
-            print(f"DAC set to: {N} ({v_ar})")
 
     def sequental_counting_adc(self):
         """АЦП методом последовательного счета"""
@@ -67,9 +65,7 @@ class R2R_ADC:
                 right = mid
             else:
                 left = mid
-                
-            if self.verbose:
-                print(f"Search: left={left}, mid={mid}, right={right}")
+
         
         time.sleep(self.compare_time)
         return left
@@ -80,6 +76,12 @@ class R2R_ADC:
 
 
 if __name__ == "__main__":
+    filename = 'data.txt'
+    with open(filename, 'w', encoding='utf-8') as file:
+        pass
+
+
+    
     try:
         # Создаем объект АЦП с динамическим диапазоном 3.31V
         adc = R2R_ADC(3.31, verbose=True)
@@ -91,9 +93,9 @@ if __name__ == "__main__":
             voltage = adc.get_sar_voltage()
             
             print(f"Measured voltage: {voltage:.3f} V")
-            
+        
             # Сохраняем в файл (если модуль save_to_gr доступен)
-            save_to_gr.write_to_txt_simple(voltage)
+            save_to_gr.write_to_txt_simple(voltage,filename)
             
             # Небольшая пауза между измерениями
             time.sleep(0.5)

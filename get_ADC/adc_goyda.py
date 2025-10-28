@@ -53,13 +53,17 @@ class R2R_ADC:
 
 
 if (__name__ == "__main__"):
+    filename = 'data.txt'
+    with open(filename, 'w', encoding='utf-8') as file:
+        pass
+
     try:
         adc=R2R_ADC(3.31)
         while True:
             #V=adc.get_sc_voltage()
             V=adc.get_sar_voltage()
             print(V)
-            save_to_gr.write_to_txt_simple(V)
+            save_to_gr.write_to_txt_simple(V, filename)
             
     finally:
         adc.deinit()
