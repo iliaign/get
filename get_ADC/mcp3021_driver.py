@@ -1,5 +1,7 @@
 import smbus
 import time
+import save_to_gr
+
 
 class MCP3021:
     def __init__(self, dynamic_range, verbose=False):
@@ -28,7 +30,15 @@ class MCP3021:
 
 if __name__ == "__main__":
     # Динамический диапазон АЦП (напряжение на контакте PWR блока AUX)
-    dynamic_range = 5.0  # Вольт
+    dynamic_range = 5.2  # Вольт
+
+    filename = 'data10-bit.txt'
+    with open(filename, 'w', encoding='utf-8') as file:
+        pass
+
+
+
+
     
     adc = None
     try:
@@ -36,6 +46,7 @@ if __name__ == "__main__":
         while True:
             voltage = adc.get_voltage()
             print(f"Измеренное напряжение: {voltage:.3f} В")
+            save_to_gr.write_to_txt_simple(voltage, filename)
             time.sleep(1)
     finally:
         if adc:

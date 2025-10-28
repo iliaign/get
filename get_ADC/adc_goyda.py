@@ -53,7 +53,7 @@ class R2R_ADC:
 
 
 if (__name__ == "__main__"):
-    filename = 'data.txt'
+    filename = 'data_ps.txt'
     with open(filename, 'w', encoding='utf-8') as file:
         pass
 
