@@ -3,8 +3,8 @@ import signal_generation as sig
 import time
 
 amplitude = 3
-sig_freq = 200
-sampl_freq = 400
+sig_freq = 20
+sampl_freq = 600
 
 
 try:
