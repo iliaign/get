@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-filename  = 'data10-bit.txt'
+filename  = 'data.txt'
 # Чтение данных из файла
 data = []
 with open(filename, 'r') as file:

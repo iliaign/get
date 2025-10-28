@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # Динамический диапазон АЦП (напряжение на контакте PWR блока AUX)
     dynamic_range = 5.2  # Вольт
 
-    filename = 'data10-bit.txt'
+    filename = 'light.txt'
     with open(filename, 'w', encoding='utf-8') as file:
         pass
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
             voltage = adc.get_voltage()
             print(f"Измеренное напряжение: {voltage:.3f} В")
             save_to_gr.write_to_txt_simple(voltage, filename)
-            time.sleep(1)
+            time.sleep(0.1)
     finally:
         if adc:
             adc.deinit()

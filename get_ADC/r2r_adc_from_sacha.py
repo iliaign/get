@@ -98,7 +98,7 @@ if __name__ == "__main__":
             save_to_gr.write_to_txt_simple(voltage,filename)
             
             # Небольшая пауза между измерениями
-            time.sleep(0.5)
+            time.sleep(0.1)
             
     except KeyboardInterrupt:
         print("\nMeasurement stopped by user")
